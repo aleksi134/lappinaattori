@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lappinaattori</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea id="kaannettavaTeksti" cols="40" rows="5">Vitun homo kirjoita tähän</textarea>
+    <button type="button" onclick="kaanna()">Käännä</button>
+    <p id="kaannettyTeksti">Tähä tekstiä tulloo perkele</p>
+
+    <script>
+
+kaanna = () => {
+    let kaannettavaTekstiLappi = document.getElementById("kaannettavaTeksti").value;
+
+    let kaannettyTeksti = kaannettavaTekstiLappi
+    .replace(/aa/g, "ha")
+    .replace(/ee/g, "he")
+    .replace(/ii/g, "hi")
+    .replace(/oo/g, "ho")
+    .replace(/uu/g, "hu")
+    .replace(/yy/g, "hy")
+    .replace(/ää/g, "hä")
+    .replace(/öö/g, "hö");
+
+    document.getElementById("kaannettyTeksti").innerHTML = kaannettyTeksti;
+}
+    </script>
+</body>
+</html>
